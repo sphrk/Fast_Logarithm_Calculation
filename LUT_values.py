@@ -13,17 +13,13 @@ print("\nExponent Table Values:")
 print(*EXPONENT_TABLE, sep=', ')
 
 
-import numpy as np
-
-N_BIT = 16
-
 # ### Priority Encoder Code Generator ####
-for i in range(N_BIT-1, 0-1, -1):
-    enc_out = bin(i)[2:].zfill((int(np.log2(N_BIT))))
-    if i != 0:
-        print(f'"{enc_out}" when x({i}) = \'1\' else')
-    else:
-        print(f'"{enc_out}";')
+# for i in range(N_BIT-1, 0-1, -1):
+#     enc_out = bin(i)[2:].zfill((int(np.log2(N_BIT))))
+#     if i != 0:
+#         print(f'"{enc_out}" when x({i}) = \'1\' else')
+#     else:
+#         print(f'"{enc_out}";')
 
 
 #### multiplexer code Generator ####
