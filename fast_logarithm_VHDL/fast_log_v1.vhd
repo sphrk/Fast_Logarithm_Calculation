@@ -1,8 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
 
 entity fast_log_v1 is
@@ -18,9 +16,11 @@ entity fast_log_v1 is
 	);
 end fast_log_v1;
 
+
+
 architecture Behavioral of fast_log_v1 is
-	type table_t is array(0 to N_BIT-1) of integer; -- (N_BIT-1 downto 0)
 	
+	type table_t is array(0 to N_BIT-1) of integer;
 	-- constant N_BIT_FRAC : integer := 6
 	constant EXPONENT_TABLE : table_t := (-266, -222, -177, -133, -89, -44, 0, 44, 89, 133, 177, 222, 266, 311, 355, 399);
 	
@@ -28,7 +28,6 @@ architecture Behavioral of fast_log_v1 is
 	
 	signal E_Log2 : signed(N_BIT-1 downto 0);
 begin
-
 	-- Find Most Significant 1 Bit (Exponent Value)
 	enc_out <= 	
 		"1111" when x(15) = '1' else
