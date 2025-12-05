@@ -12,6 +12,14 @@ EXPONENT_TABLE = np.round(EXPONENT_TABLE * SCALE).astype(int)
 print("\nExponent Table Values:")
 print(*EXPONENT_TABLE, sep=', ')
 
+N_BIT_MANTISA = 4 # for better approximation
+
+M = np.arange(0, 2**N_BIT_MANTISA) / (2**N_BIT_MANTISA)
+MANTISA_TABLE = np.log(1. + M)
+MANTISA_TABLE = np.round(MANTISA_TABLE * SCALE).astype(int)
+print('\nMantissa Table Values:')
+print(*MANTISA_TABLE, sep=', ')
+
 
 # ### Priority Encoder Code Generator ####
 # for i in range(N_BIT-1, 0-1, -1):
