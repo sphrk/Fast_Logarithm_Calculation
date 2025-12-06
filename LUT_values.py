@@ -11,11 +11,11 @@ EXPONENT_TABLE = (E) * np.log(2)
 EXPONENT_TABLE = np.round(EXPONENT_TABLE * SCALE).astype(int)
 print("\nExponent Table Values:")
 print(*EXPONENT_TABLE, sep=', ')
-
+## ------------------------------------------------------
 N_BIT_MANTISA = 4 # for better approximation
 
-M = np.arange(0, 2**N_BIT_MANTISA) / (2**N_BIT_MANTISA)
-MANTISA_TABLE = np.log(1. + M)
+m = np.arange(0, 2**N_BIT_MANTISA) / (2**N_BIT_MANTISA)
+MANTISA_TABLE = np.log(1. + m)
 MANTISA_TABLE = np.round(MANTISA_TABLE * SCALE).astype(int)
 print('\nMantissa Table Values:')
 print(*MANTISA_TABLE, sep=', ')
@@ -30,7 +30,7 @@ print(*MANTISA_TABLE, sep=', ')
 #         print(f'"{enc_out}";')
 
 
-#### multiplexer code Generator ####
+# ### multiplexer code Generator ####
 # value_name = 'x'
 # print("with <sel_signal> select")
 # print("<output_signal> <= ")
@@ -50,4 +50,5 @@ print(*MANTISA_TABLE, sep=', ')
 #         print(f'{value_name}(0) {CONCAT_ZERO} when others;')
 #     else:
 #         print(f'{value_name}({hi} downto {li}) {CONCAT_ZERO} when "{sel}",')
+
 
